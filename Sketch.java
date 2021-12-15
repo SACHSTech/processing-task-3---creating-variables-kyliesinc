@@ -1,6 +1,10 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
+  public float petalX = random(0, width);
+  public float petalY = random(0, height);
+  public float petalSize = random(25, 150);
+  public float petalDistance = petalSize / 1.5f;
 	
 	
   /**
@@ -8,7 +12,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(600, 600);
+    size(400, 400);
   }
 
   /** 
@@ -17,47 +21,31 @@ public class Sketch extends PApplet {
    */
   public void setup() {
     background(80, 179, 250);
+
+    
   }
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-	  
-	// draw stem for the flower
-  stroke(100);
-  fill(21, 250, 0);
-  rect(width/2, height/2, width/120, height/2);
-  
-  // draw white flower petals with circles
-  stroke(100);
-  fill(255, 255, 255); // red
-  ellipse(width/2.857f, height/2, width/6, height/6);
-  
-  stroke(100);
-  fill(255, 255, 255); //orange
-  ellipse(width/2.308f, height/1.622f, width/6, height/6);
-  
-  stroke(100);
-  fill(255, 255, 255); //green
-  ellipse(width/1.714f, height/1.621f, width/6, height/6);
-  
-  stroke(100);
-  fill(255, 255, 255); //blue
-  ellipse(width/1.538f, height/2, width/6, height/6);
-  
-  stroke(100);
-  fill(255, 255, 255); //pink
-  ellipse(width/1.714f, height/2.609f, width/6, height/6);
- 
-  stroke(100);
-  fill(255, 255, 255); //white
-  ellipse(width/2.308f, height/2.609f, width/6, height/6);
-  
-  // yellow center of the flower 
-  stroke(100);
-  fill(255, 241, 51);
-  ellipse(width/2, height/2, width/6, height/6);
-  
+    //flower stem
+    fill(75, 245, 66);
+    rect(petalX, petalY, petalSize/10, petalSize*2);
+
+    //flower petal white
+    fill(255, 255, 255);
+
+    ellipse (petalX + petalDistance, petalY, petalSize, petalSize);
+
+    ellipse (petalX - petalDistance, petalY, petalSize, petalSize);
+
+    ellipse(petalX, petalY + petalDistance, petalSize, petalSize);
+
+    ellipse(petalX, petalY - petalDistance, petalSize,petalSize);
+
+    // yellow center of flower
+    fill(255, 241, 51);
+    ellipse (petalX, petalY, petalSize, petalSize);
   }  
 }
