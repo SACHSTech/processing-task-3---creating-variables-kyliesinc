@@ -8,7 +8,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(400, 400);
+    size(600, 600);
   }
 
   /** 
@@ -16,7 +16,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(210, 255, 173);
+    background(80, 179, 250);
   }
 
   /**
@@ -24,13 +24,40 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
-
-    stroke(255);
-    line(50, 125, 70, 50);  
-  }
+	// draw stem for the flower
+  stroke(100);
+  fill(21, 250, 0);
+  rect(width/2, height/2, width/120, height/2);
   
-  // define other methods down here.
+  // draw white flower petals with circles
+  stroke(100);
+  fill(255, 255, 255); // red
+  ellipse(width/2.857f, height/2, width/6, height/6);
+  
+  stroke(100);
+  fill(255, 255, 255); //orange
+  ellipse(width/2.308f, height/1.622f, width/6, height/6);
+  
+  stroke(100);
+  fill(255, 255, 255); //green
+  ellipse(width/1.714f, height/1.621f, width/6, height/6);
+  
+  stroke(100);
+  fill(255, 255, 255); //blue
+  ellipse(width/1.538f, height/2, width/6, height/6);
+  
+  stroke(100);
+  fill(255, 255, 255); //pink
+  ellipse(width/1.714f, height/2.609f, width/6, height/6);
+ 
+  stroke(100);
+  fill(255, 255, 255); //white
+  ellipse(width/2.308f, height/2.609f, width/6, height/6);
+  
+  // yellow center of the flower 
+  stroke(100);
+  fill(255, 241, 51);
+  ellipse(width/2, height/2, width/6, height/6);
+  
+  }  
 }
